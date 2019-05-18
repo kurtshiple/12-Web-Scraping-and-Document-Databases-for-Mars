@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+    <hr>
+    <h2>Latest Mars News</h2>
+    <hr>
+    <h4>{{ space.news_title }}</h4>
+    <p>{{ space.news_paragraph }}</p>
+    <hr>
+    <div class="row">
+      <div class="col-sm-8">
+        <h2>Featured Mars Image</h2>
+        <hr>
+        <img src="{{ space.featured_image }}" alt="Featured Mars Image" style='height: 100%; width: 100%; object-fit: contain'>
+        <hr>
+      </div>
+      <div class="col-sm-4">
+        <h2>Current Weather on Mars</h2>
+        <hr>
+        {{ space.current_weather }}
+        <hr>
+        <h2>Mars Facts</h2>
+        <hr>
+        <table>{{ space.facts_table|safe }}</table>
+      </div>
+    </div>
+    <br></br>
+    <hr>
+    <h2 class="headertekst">Mars Hemispheres</h2>
+    <hr>
+    <div class="row">
+      <div class="col-sm-6" style="background-color:lavender;">
+        <img src="{{ space.Cerberus.img_url }}" alt="Featured Mars Image" style='height: 100%; width: 100%; object-fit: contain'>
+        <hr>
+        <h4>{{ space.Cerberus.title }}</h4>
+        <hr>
+      </div>
+      <div class="col-sm-6" style="background-color:lavenderblush;">
+        <img src="{{ space.Schiaparelli.img_url }}" alt="Featured Mars Image" style='height: 100%; width: 100%; object-fit: contain'>
+        <hr>
+        <h4>{{ space.Schiaparelli.title }}</h4>
+        <hr>
+      </div>
+    </div>
+    <br></br>
+    <div class="row">
+      <div class="col-sm-6" style="background-color:lavender;">
+        <img src="{{ space.Syrtis.img_url }}" alt="Featured Mars Image" style='height: 100%; width: 100%; object-fit: contain'>
+        <hr>
+        <h4>{{ space.Syrtis.title }}</h4>
+        <hr>
+      </div>
+      <div class="col-sm-6" style="background-color:lavenderblush;">
+        <img src="{{ space.Valles.img_url }}" alt="Featured Mars Image" style='height: 100%; width: 100%; object-fit: contain'> 
+        <hr>
+        <h4>{{ space.Valles.title }}</h4>
+        <hr>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
